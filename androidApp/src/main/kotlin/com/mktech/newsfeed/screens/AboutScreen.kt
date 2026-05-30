@@ -1,4 +1,4 @@
-package com.mktech.newsfeed
+package com.mktech.newsfeed.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.mktech.newsfeed.Platform
 
 @Composable
 fun AboutScreen() {
