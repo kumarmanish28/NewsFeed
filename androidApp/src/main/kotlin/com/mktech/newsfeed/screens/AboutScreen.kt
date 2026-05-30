@@ -7,7 +7,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.ArrowBack
+import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -18,17 +23,27 @@ import androidx.compose.ui.unit.dp
 import com.mktech.newsfeed.Platform
 
 @Composable
-fun AboutScreen() {
+fun AboutScreen(
+    onBackButtonClick: () -> Unit
+) {
     Column {
-        Toolbar()
+        Toolbar(onBackButtonClick)
         ContentView()
     }
 }
 
 @Composable
-fun Toolbar(modifier: Modifier = Modifier) {
+fun Toolbar(onBackButtonClick: () -> Unit) {
     TopAppBar(
-        title = { Text("About Device") }
+        title = { Text("About Device") },
+        navigationIcon = {
+            IconButton(onClick = onBackButtonClick) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
+                    contentDescription = "back button"
+                )
+            }
+        }
     )
 }
 

@@ -28,6 +28,8 @@ dependencies {
 
     implementation(libs.io.coil.compose)
     implementation(libs.io.coil.network.okhttp)
+    implementation(libs.androidx.icons)
+    implementation(libs.androidx.navigation.compose)
 }
 
 android {

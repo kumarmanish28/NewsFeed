@@ -9,15 +9,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.mktech.newsfeed.articles.ArticlesViewModel
-import com.mktech.newsfeed.screens.AboutScreen
 import com.mktech.newsfeed.screens.ArticlesScreen
 
 class MainActivity : ComponentActivity() {
     val articleViewModel: ArticlesViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
@@ -25,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ArticlesScreen(articleViewModel)
+                    AppScaffold(articleViewModel)
                 }
             }
         }
